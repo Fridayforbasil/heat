@@ -7,3 +7,4 @@ The isotopic abundance as well as their stability and half-lives may also be vie
 
 <img width="1217" height="852" alt="image" src="https://github.com/user-attachments/assets/34170169-d45f-49a6-a84d-70c974aa1e18" />
 
+You may also identify which nuclear reaction channels can be used to produce the desired isotope.
