@@ -11,7 +11,7 @@ You may also identify which nuclear reaction channels can be used to produce the
 
 <img width="776" height="200" alt="Screenshot from 2026-01-12 16-51-31" src="https://github.com/user-attachments/assets/e5d3e395-e218-4d3b-b17d-367cbd8e74be" />
 
-You can also view the accelerator based production approaches. Proton and deuterium induced reactions are also given. 
+You can also view the accelerator based production approaches. For proton and deuterium induced reactions, production channels are given. 
 
 <img width="769" height="195" alt="image" src="https://github.com/user-attachments/assets/23b23b83-32bd-43c4-86c6-4e7417bc296a" />
 
