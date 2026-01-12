@@ -360,6 +360,50 @@ function getProductionMethods(z, n) {
         methods.push(`Neutron Capture (n,γ) on ${neutronParent.name}-${targetA - 1}`);
     }
 
+    // Proton-induced reactions
+    // (p,n): (Z-1, A) + p -> (Z, A) + n
+    const pnTarget = nuclideData.find(d => d.z === z - 1 && (d.z + d.n) === targetA);
+    if (pnTarget) {
+        methods.push(`(p,n) reaction on ${pnTarget.name}-${targetA}`);
+    }
+
+    // (p,γ): (Z-1, A-1) + p -> (Z, A)
+    const pgTarget = nuclideData.find(d => d.z === z - 1 && (d.z + d.n) === targetA - 1);
+    if (pgTarget) {
+        methods.push(`Proton Capture (p,γ) on ${pgTarget.name}-${targetA - 1}`);
+    }
+
+    // (p,2n): (Z-1, A+1) + p -> (Z, A) + 2n
+    const p2nTarget = nuclideData.find(d => d.z === z - 1 && (d.z + d.n) === targetA + 1);
+    if (p2nTarget) {
+        methods.push(`(p,2n) reaction on ${p2nTarget.name}-${targetA + 1}`);
+    }
+
+    // Deuteron-induced reactions
+    // (d,n): (Z-1, A-1) + d -> (Z, A) + n
+    const dnTarget = nuclideData.find(d => d.z === z - 1 && (d.z + d.n) === targetA - 1);
+    if (dnTarget) {
+        methods.push(`(d,n) reaction on ${dnTarget.name}-${targetA - 1}`);
+    }
+
+    // (d,p): (Z, A-1) + d -> (Z, A) + p
+    const dpTarget = nuclideData.find(d => d.z === z && (d.z + d.n) === targetA - 1);
+    if (dpTarget) {
+        methods.push(`(d,p) reaction on ${dpTarget.name}-${targetA - 1}`);
+    }
+
+    // (d,2n): (Z-1, A+1) + d -> (Z, A) + 2n
+    const d2nTarget = nuclideData.find(d => d.z === z - 1 && (d.z + d.n) === targetA + 1);
+    if (d2nTarget) {
+        methods.push(`(d,2n) reaction on ${d2nTarget.name}-${targetA + 1}`);
+    }
+
+    // (d,α): (Z+2, A+3) + d -> (Z, A) + α
+    const daTarget = nuclideData.find(d => d.z === z + 2 && (d.z + d.n) === targetA + 3);
+    if (daTarget) {
+        methods.push(`(d,α) reaction on ${daTarget.name}-${targetA + 3}`);
+    }
+
     // Alpha Capture (alpha, n) or (alpha, gamma) - less common but possible
     // (Z-2, A-4) + alpha -> (Z, A)
     const alphaParent = nuclideData.find(d => d.z === z - 2 && (d.z + d.n) === targetA - 4);
